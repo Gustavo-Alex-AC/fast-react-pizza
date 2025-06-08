@@ -44,7 +44,9 @@ function CreateOrder() {
 
   return (
     <div className="px-4 py-6">
-      <h2 className="mb-8 text-xl font-semibold">Ready to order? Lets go!</h2>
+      <h2 className="mb-8 text-xl font-semibold">
+        Ponto para fazer o pedido? Vamos a isso!
+      </h2>
 
       {/* <Form method="POST" action="order/new"> */}
       <Form method="POST">
@@ -72,7 +74,7 @@ function CreateOrder() {
         </div>
 
         <div className="relative mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Address</label>
+          <label className="sm:basis-40">Endereço</label>
           <div className="grow">
             <input
               type="text"
