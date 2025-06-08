@@ -1,7 +1,13 @@
+// export function formatCurrency(value) {
+//   return new Intl.NumberFormat("en", {
+//     style: "currency",
+//     currency: "EUR",
+//   }).format(value);
+// }
 export function formatCurrency(value) {
-  return new Intl.NumberFormat("en", {
+  return new Intl.NumberFormat("pt", {
     style: "currency",
-    currency: "EUR",
+    currency: "AOA",
   }).format(value);
 }
 

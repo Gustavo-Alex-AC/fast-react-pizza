@@ -49,7 +49,7 @@ function CreateOrder() {
       {/* <Form method="POST" action="order/new"> */}
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">First Name</label>
+          <label className="sm:basis-40">Primeiro nome</label>
           <input
             type="text"
             name="customer"
@@ -60,7 +60,7 @@ function CreateOrder() {
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Phone number</label>
+          <label className="sm:basis-40">Telefone</label>
           <div className="grow">
             <input type="tel" name="phone" required className="input w-full" />
             {formErrors?.phone && (
@@ -98,7 +98,7 @@ function CreateOrder() {
                   dispatch(fetchAddress());
                 }}
               >
-                Get position
+                Buscar localização
               </Button>
             </span>
           )}
@@ -114,7 +114,7 @@ function CreateOrder() {
             className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2"
           />
           <label htmlFor="priority" className="font-medium">
-            Want to yo give your order priority?
+            Quer dar urgência ao seu pedido?
           </label>
         </div>
 
@@ -131,8 +131,8 @@ function CreateOrder() {
           />
           <Button type="primary" disabled={isSubmitting || isLoadingAddress}>
             {isSubmitting
-              ? "Placing order..."
-              : `Order now for ${formatCurrency(totalPrice)}`}
+              ? "Finalizando o pedido..."
+              : `Pedir agora por ${formatCurrency(totalPrice)}`}
           </Button>
         </div>
       </Form>
