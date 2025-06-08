@@ -33,17 +33,17 @@ function MenuItem({ pizza }) {
         alt={name}
         className={`h-24 ${soldOut ? "opacity-70 grayscale" : ""}`}
       />
-      <div className="flex flex-col grow pt-0.5">
+      <div className="flex grow flex-col pt-0.5">
         <p className="font-medium">{name}</p>
-        <p className="text-sm italic text-stone-500 capitalize">
+        <p className="text-sm capitalize italic text-stone-500">
           {ingredients.join(", ")}
         </p>
         <div className="mt-auto flex  items-center justify-between">
           {!soldOut ? (
             <p className="text-sm ">{formatCurrency(unitPrice)}</p>
           ) : (
-            <p className="text-sm uppercase text-stone-500 font-medium">
-              Sold out
+            <p className="text-sm font-medium uppercase text-stone-500">
+              Esgotado
             </p>
           )}
 
@@ -59,7 +59,7 @@ function MenuItem({ pizza }) {
 
           {!soldOut && !isInCart && (
             <Button type="small" onClick={handleAddToCart}>
-              Add to cart
+              Adicionar ao carrinho
             </Button>
           )}
         </div>

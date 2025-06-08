@@ -38,30 +38,30 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="px-6 py-8 space-y-8">
-      <div className="flex items-center justify-between flex-wrap gap-2">
+    <div className="space-y-8 px-6 py-8">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-semibold">Oreder #{id} status</h2>
 
         <div className="space-x-2">
           {priority && (
-            <span className="bg-red-500 rounded-full py-1 px-3 text-sm uppercase font-semibold text-red-50 tracking-wide">
-              Priority
+            <span className="rounded-full bg-red-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-red-50">
+              Urgência
             </span>
           )}
-          <span className="bg-green-500 rounded-full py-1 px-3 text-sm uppercase font-semibold text-green-50 tracking-wide">
-            {status} order
+          <span className="rounded-full bg-green-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-green-50">
+            {status} pedido
           </span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between flex-wrap gap-2 bg-stone-200 py-5 px-6">
+      <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-200 px-6 py-5">
         <p className="font-medium">
           {deliveryIn >= 0
-            ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
-            : "Order should have arrived"}
+            ? `Só ${calcMinutesLeft(estimatedDelivery)} minutos faltanto 😃`
+            : "O seu pedido já deveria ter chegado 😢"}
         </p>
         <p className="text-xs text-stone-500">
-          (Estimated delivery: {formatDate(estimatedDelivery)})
+          (Tempo de entrega: {formatDate(estimatedDelivery)})
         </p>
       </div>
 
@@ -79,17 +79,17 @@ function Order() {
         ))}
       </ul>
 
-      <div className="space-y-2 bg-stone-200 py-5 px-6">
+      <div className="space-y-2 bg-stone-200 px-6 py-5">
         <p className="text-sm font-medium text-stone-600">
-          Price pizza: {formatCurrency(orderPrice)}
+          Preço da pizza: {formatCurrency(orderPrice)}
         </p>
         {priority && (
           <p className="text-sm font-medium text-stone-600">
-            Price priority: {formatCurrency(priorityPrice)}
+            Preço com urgência: {formatCurrency(priorityPrice)}
           </p>
         )}
         <p className="font-bold">
-          To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
+          Total a pagar na entrega: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
       {!priority && <UpdateOrder order={order} />}

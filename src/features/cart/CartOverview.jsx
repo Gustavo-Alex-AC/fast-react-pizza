@@ -10,12 +10,12 @@ function CartOverview() {
   if (!totalCartQuantity) return null;
 
   return (
-    <div className="bg-stone-800 text-stone-200 uppercase px-4 py-4 sm:px-6 text-sm md:text-base flex items-center justify-between">
-      <p className="text-stone-300 font-simebold space-x-4 sm:space-x-6">
+    <div className="flex items-center justify-between bg-stone-800 px-4 py-4 text-sm uppercase text-stone-200 sm:px-6 md:text-base">
+      <p className="font-simebold space-x-4 text-stone-300 sm:space-x-6">
         <span>{totalCartQuantity} pizzas</span>
         <span>{formatCurrency(totalCartPrice)}</span>
       </p>
-      <Link to="/cart">Open cart &rarr;</Link>
+      <Link to="/cart">Abrir carrinho &rarr;</Link>
     </div>
   );
 }

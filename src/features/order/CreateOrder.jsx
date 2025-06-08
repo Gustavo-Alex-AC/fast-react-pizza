@@ -44,11 +44,11 @@ function CreateOrder() {
 
   return (
     <div className="px-4 py-6">
-      <h2 className="text-xl font-semibold mb-8">Ready to order? Lets go!</h2>
+      <h2 className="mb-8 text-xl font-semibold">Ready to order? Lets go!</h2>
 
       {/* <Form method="POST" action="order/new"> */}
       <Form method="POST">
-        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">First Name</label>
           <input
             type="text"
@@ -59,19 +59,19 @@ function CreateOrder() {
           />
         </div>
 
-        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">Phone number</label>
           <div className="grow">
             <input type="tel" name="phone" required className="input w-full" />
             {formErrors?.phone && (
-              <p className="text-xs mt-2 text-red-700 bg-red-100 p-2 rounded-md">
+              <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
                 {formErrors.phone}
               </p>
             )}
           </div>
         </div>
 
-        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center relative">
+        <div className="relative mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">Address</label>
           <div className="grow">
             <input
@@ -83,7 +83,7 @@ function CreateOrder() {
               className="input w-full"
             />
             {addressStatus === "error" && (
-              <p className="text-xs mt-2 text-red-700 bg-red-100 p-2 rounded-md">
+              <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
                 {errorAddress}
               </p>
             )}
@@ -104,7 +104,7 @@ function CreateOrder() {
           )}
         </div>
 
-        <div className="mb-12 flex gap-5 items-center">
+        <div className="mb-12 flex items-center gap-5">
           <input
             type="checkbox"
             name="priority"
@@ -156,7 +156,7 @@ export async function action({ request }) {
 
   if (!isValidPhone(order.phone))
     errors.phone =
-      "Please give us your correct phone number. We might need it to call you.";
+      "Por favor, informe o seu número de telefone correto. Podemos precisar ligar para você.";
 
   if (Object.keys(errors).length > 0) return errors;
 
